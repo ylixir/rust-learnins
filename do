@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 run() {
-  nix run -f "$(dirname "$0")/default.nix" -c "${@}"
-}
-
-setup() {
-  run rustup default stable
+  if [ $# -eq 0 ]
+  then
+    nix run -f "$(dirname "$0")/default.nix"
+  else
+    nix run -f "$(dirname "$0")/default.nix" -c "${@}"
+  fi
 }
 
 rustc() {
