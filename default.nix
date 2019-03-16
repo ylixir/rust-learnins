@@ -7,4 +7,5 @@ in
   [
     pkgs.rustc
     pkgs.rustfmt
+    pkgs.cargo
   ]

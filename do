@@ -8,7 +8,12 @@ run() {
   fi
 }
 
+cargo() {
+  run cargo "${@}"
+}
+
 rustc() {
   run rustc "${@}"
 }
+
 "$1" "${@:2}"
